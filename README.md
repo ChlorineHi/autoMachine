@@ -1,6 +1,6 @@
 以下是一个经过美术优化的 README.md 示例，你可以根据实际情况调整内容和样式。希望这能帮助你更好地展示实验代码和相关说明。
 北邮《形式语言与自动机》实验代码
-[https://example.com/beiyou_logo.png](https://www.bing.com/images/search?view=detailV2&ccid=oHFvDecA&id=1C7F007C2B8BA03FDE390001B6D78FD60413EED0&thid=OIP.oHFvDecAwofKR6kOusRsHgHaEP&mediaurl=https%3a%2f%2fglobal-uploads.webflow.com%2f5e2d970a86f417102b21abd2%2f6397bd1375bcdbf3ba64fb62_INFJ+Hero-01.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.a0716f0de700c287ca47a90ebac46c1e%3frik%3d0O4TBNaP17YBAA%26pid%3dImgRaw%26r%3d0&exph=1910&expw=3334&q=infj&simid=607988566340601700&FORM=IRPRST&ck=17269CFA06571546AFFC383E5B6FAD9D&selectedIndex=35&itb=1)
+(https://www.bing.com/images/search?view=detailV2&ccid=oHFvDecA&id=1C7F007C2B8BA03FDE390001B6D78FD60413EED0&thid=OIP.oHFvDecAwofKR6kOusRsHgHaEP&mediaurl=https%3a%2f%2fglobal-uploads.webflow.com%2f5e2d970a86f417102b21abd2%2f6397bd1375bcdbf3ba64fb62_INFJ+Hero-01.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.a0716f0de700c287ca47a90ebac46c1e%3frik%3d0O4TBNaP17YBAA%26pid%3dImgRaw%26r%3d0&exph=1910&expw=3334&q=infj&simid=607988566340601700&FORM=IRPRST&ck=17269CFA06571546AFFC383E5B6FAD9D&selectedIndex=35&itb=1)
 实验代码简介
 欢迎来到北邮《形式语言与自动机》实验代码仓库！本仓库旨在帮助同学们更好地理解和展示实验内容，通过前后端的设置，为大家提供一个直观的实验演示 Demo。
 注意：
@@ -113,4 +113,4 @@ formal-languages-and-automata/
 本项目仅供学习交流使用，未经授权，请勿用于商业用途。
 
 感谢你的支持！ ❤️
-希望这个优化后的 README.md 能让你的项目看起来更加美观和专业！
+
