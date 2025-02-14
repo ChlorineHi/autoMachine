@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式状态机转换器</title>
+    <style>
+        body { 
+            font-family: '微软雅黑', Arial, sans-serif; 
+            margin: 20px; 
+            background-color: #f4f4f4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 { 
+            color: #2c3e50; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        input, button { 
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #output {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        #outputText {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .loading {
+            text-align: center;
+            color: #888;
+            display: none;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>正则表达式状态机转换器</h1>
+        <form id="inputForm">
+            <div class="input-group">
+                <label for="regexInput">请输入正则表达式：</label>
+                <input type="text" id="regexInput" name="regexInput" placeholder="例如：(0|1)*1" required>
+                <button type="submit">转换</button>
+            </div>
+        </form>
+        <div class="loading" id="loading">正在处理...</div>
+        <div id="output">
+            <h2>输出结果：</h2>
+            <pre id="outputText">这里将显示状态机转换结果</pre>
+            <div id="errorText" class="error"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('inputForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const regexInput = document.getElementById('regexInput').value;
+            const outputText = document.getElementById('outputText');
+            const errorText = document.getElementById('errorText');
+            const loading = document.getElementById('loading');
+            
+            // 显示加载状态
+            outputText.textContent = '这里将显示状态机转换结果';
+            errorText.textContent = '';
+            loading.style.display = 'block';
+            
+            // 调用后端处理
+            fetch(`/process_regex?regex=${encodeURIComponent(regexInput)}`)
+                .then(response => response.json())
+                .then(data => {
+                    loading.style.display = 'none';
+                    if (data.result) {
+                        outputText.textContent = data.result;
+                    } else if (data.error) {
+                        errorText.textContent = data.error;
+                    }
+                })
+                .catch(error => {
+                    loading.style.display = 'none';
+                    errorText.textContent = '网络错误：' + error;
+                });
+        });
+    </script>
+</body>
+</html>
